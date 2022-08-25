@@ -12,7 +12,6 @@
 class Solution {
 public:
     void maxTreeDept(TreeNode* root,int level,vector<int>& ans){
-       if(!root) return;
        ans.push_back(++level);
        if(root->left!= NULL){
             maxTreeDept(root->left,level,ans);
