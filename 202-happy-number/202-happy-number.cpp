@@ -10,15 +10,16 @@ public:
         return ans;
     }
     bool isHappy(int n) {
-        int assumption = 0;
-        for(int i=0; i<1000; i++){
+       int assumption = 0;
+       map<int,bool> seen;
+       while(n!=1){
             n = squareSum(n); 
-            cout << n << endl;
-            if(n == 1){
-                return 1;
+            if(!seen[n]){
+                 seen[n] = true;
+            } else {
+                return false;
             }
         }
-        return false;
-        
+       return true;
     }
 };
